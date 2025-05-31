@@ -1,31 +1,31 @@
 # Twitter MCP Server
 
-ClaudeでTwitter/Xの投稿文字数を正確にカウントし、投稿を最適化するためのMCP（Model Context Protocol）サーバです。
+An MCP (Model Context Protocol) server for Claude to accurately count Twitter/X post characters and optimize posts.
 
-## 機能
+## Features
 
-- **正確な文字数カウント**: Twitter/Xの公式カウント方式に基づいて文字数を計算
-- **投稿検証**: 文字数制限やその他の制約をチェック
-- **投稿最適化**: 長すぎる投稿の最適化提案
-- **エンティティ抽出**: URL、メンション、ハッシュタグの抽出と解析
+- **Accurate Character Counting**: Calculate character count based on Twitter/X's official counting method
+- **Post Validation**: Check character limits and other constraints
+- **Post Optimization**: Suggestions for optimizing posts that are too long
+- **Entity Extraction**: Extract and analyze URLs, mentions, and hashtags
 
-## インストール
+## Installation
 
 ```bash
-# リポジトリをクローン
+# Clone the repository
 git clone <your-repo-url>
 cd twitter-mcp-server
 
-# 依存関係をインストール
+# Install dependencies
 npm install
 
-# ビルド
+# Build
 npm run build
 ```
 
-## Claude Desktopでの設定
+## Configuration for Claude Desktop
 
-Claude Desktopの設定ファイル（`~/Library/Application Support/Claude/claude_desktop_config.json`）に以下を追加：
+Add the following to your Claude Desktop configuration file (`~/Library/Application Support/Claude/claude_desktop_config.json`):
 
 ```json
 {
@@ -38,85 +38,85 @@ Claude Desktopの設定ファイル（`~/Library/Application Support/Claude/clau
 }
 ```
 
-## 使用方法
+## Usage
 
-Claude内で以下のツールが利用可能になります：
+The following tools will be available in Claude:
 
 ### 1. count_tweet_characters
 ```
-Twitter/Xの投稿文字数を正確にカウントしてください:
-「こんにちは！今日は良い天気ですね ☀️ #goodweather https://example.com」
+Please count the characters in this Twitter/X post accurately:
+"Hello! It's a beautiful day today ☀️ #goodweather https://example.com"
 ```
 
 ### 2. validate_tweet
 ```
-この投稿が有効かどうか検証してください:
-「（長い投稿テキスト）」
+Please validate if this post is valid:
+"(long post text)"
 ```
 
 ### 3. optimize_tweet
 ```
-この投稿を最適化してください:
-「（最適化したい投稿テキスト）」
+Please optimize this post:
+"(post text to optimize)"
 ```
 
 ### 4. extract_entities
 ```
-この投稿からエンティティを抽出してください:
-「@user こんにちは！ #hello https://example.com を見てください」
+Please extract entities from this post:
+"@user Hello! #hello please check out https://example.com"
 ```
 
-## 開発
+## Development
 
 ```bash
-# 開発モードで起動
+# Start in development mode
 npm run dev
 
-# ビルド
+# Build
 npm run build
 
-# 本番環境で起動
+# Start in production
 npm start
 ```
 
-## API詳細
+## API Details
 
 ### count_tweet_characters
-- **入力**: `text` (string) - カウントしたいテキスト
-- **出力**: 文字数、残り文字数、有効性などの詳細情報
+- **Input**: `text` (string) - Text to count
+- **Output**: Detailed information including character count, remaining characters, validity
 
 ### validate_tweet
-- **入力**: `text` (string) - 検証したいテキスト
-- **出力**: 有効性、問題点、エンティティ情報
+- **Input**: `text` (string) - Text to validate
+- **Output**: Validity, issues, entity information
 
 ### optimize_tweet
-- **入力**: 
-  - `text` (string) - 最適化したいテキスト
-  - `maxLength` (number, optional) - 最大文字数（デフォルト: 280）
-- **出力**: 最適化されたテキストと提案
+- **Input**: 
+  - `text` (string) - Text to optimize
+  - `maxLength` (number, optional) - Maximum character count (default: 280)
+- **Output**: Optimized text and suggestions
 
 ### extract_entities
-- **入力**: `text` (string) - エンティティを抽出したいテキスト
-- **出力**: URL、メンション、ハッシュタグのリスト
+- **Input**: `text` (string) - Text to extract entities from
+- **Output**: Lists of URLs, mentions, and hashtags
 
-## 技術スタック
+## Tech Stack
 
-- **TypeScript**: 型安全性とより良い開発体験
-- **@modelcontextprotocol/sdk**: MCP サーバー実装
-- **twitter-text**: Twitter公式の文字数カウントライブラリ
+- **TypeScript**: Type safety and better development experience
+- **@modelcontextprotocol/sdk**: MCP server implementation
+- **twitter-text**: Official Twitter character counting library
 
-## ライセンス
+## License
 
 MIT License
 
-## 貢献
+## Contributing
 
-1. このリポジトリをフォーク
-2. フィーチャーブランチを作成 (`git checkout -b feature/amazing-feature`)
-3. 変更をコミット (`git commit -m 'Add some amazing feature'`)
-4. ブランチにプッシュ (`git push origin feature/amazing-feature`)
-5. プルリクエストを作成
+1. Fork this repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Create a Pull Request
 
-## サポート
+## Support
 
-問題や質問がある場合は、GitHub Issuesで報告してください。
+If you have any issues or questions, please report them in GitHub Issues.
