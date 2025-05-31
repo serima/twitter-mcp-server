@@ -1,0 +1,35 @@
+{
+  "name": "twitter-mcp-server",
+  "version": "1.0.0",
+  "main": "dist/server.js",
+  "bin": {
+    "twitter-mcp-server": "dist/server.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "dev": "nodemon --exec ts-node src/server.ts",
+    "prepare": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mcp",
+    "twitter",
+    "character-count",
+    "claude"
+  ],
+  "author": "",
+  "license": "MIT",
+  "description": "MCP Server for Twitter/X character counting and validation",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "twitter-text": "^3.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.29",
+    "@types/twitter-text": "^3.1.10",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
