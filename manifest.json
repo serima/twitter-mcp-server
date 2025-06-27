@@ -1,0 +1,26 @@
+{
+  "dxt_version": "0.1",
+  "name": "twitter-mcp-server",
+  "version": "1.0.0",
+  "description": "MCP Server for Twitter/X character counting and validation",
+  "author": {
+    "name": "serima"
+  },
+  "documentation": "https://github.com/serima/twitter-mcp-server",
+  "server": {
+    "type": "node",
+    "entry_point": "dist/server.js",
+    "mcp_config": {
+      "command": "node",
+      "args": [
+        "${__dirname}/dist/server.js"
+      ],
+      "env": {}
+    }
+  },
+  "keywords": [
+    "twitter",
+    "x"
+  ],
+  "license": "MIT"
+}
